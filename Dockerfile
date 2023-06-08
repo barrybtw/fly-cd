@@ -24,17 +24,17 @@ RUN apt-get update -qq && \
     apt-get install -y python-is-python3 pkg-config build-essential 
 
 # Install node modules
-COPY --link package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod=false
+COPY --link package.json ./
+RUN npm install --frozen-lockfile --prod=false
 
 # Copy application code
 COPY --link . .
 
 # Build application
-RUN pnpm run build
+RUN npm run build
 
 # Remove development dependencies
-RUN pnpm prune --prod
+RUN npm prune --prod
 
 
 # Final stage for app image
@@ -45,4 +45,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "pnpm", "run", "start" ]
+CMD [ "npm", "run", "start" ]
