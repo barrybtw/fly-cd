@@ -18,23 +18,23 @@ Here're some of the project's best features:
 
 <p>1. Install dependencies</p>
 
-```json
+```
 {npm/yarn/pnpm} install
 ```
 
 <p>2. Environment variables</p>
 
-```json
-PGHOST=""
-PGDATABASE=""
-PGUSER=""
-PGPASSWORD=""
-ENDPOINT_ID=""
+```diff
++ PGHOST=""
++ PGDATABASE=""
++ PGUSER=""
++ PGPASSWORD=""
++ ENDPOINT_ID=""
 ```
 
 <p>3. Run the server</p>
 
-```json
+```
 {npm/yarn/pnpm} run dev
 ```
 
