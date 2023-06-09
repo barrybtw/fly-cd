@@ -10,9 +10,5 @@ export const env = createEnv({
     PGPASSWORD: z.string(),
     ENDPOINT_ID: z.string(),
   },
-  /**
-   * What object holds the environment variables at runtime.
-   * Often `process.env` or `import.meta.env`
-   */
   runtimeEnv: process.env,
 });
