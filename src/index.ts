@@ -5,11 +5,13 @@ const app = express();
 
 import { lib } from '@/lib.js';
 import { getPgVersion } from './db.js';
+import { env } from './env.js';
 
 const port = process.env.PORT || 3000;
 
 app.get('/', (_req: Request, res: Response) => {
-  res.send(lib());
+  const thing = env.ENDPOINT_ID + lib();
+  res.send(thing);
 });
 
 app.listen(port, () => {
